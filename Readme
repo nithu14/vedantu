@@ -1,0 +1,20 @@
+School Hostel assignment to segregated based on Veg and Non-Veg for each Class A and B 
+Please provide input with Underscore
+eg:-
+Sample Input
+init_12 (12 is taken as max students allowed)
+REQ_1_A_V
+REG_2_B_V
+REQ_3_A_NV
+REG_4_B_NV
+REQ_5_A_V
+REG_6_B_V
+REQ_7_A_NV
+REG_8_B_NV
+
+
+Sample Output:- 
+AV:[1,5]
+BV:[2,6]
+ANV:[3,7]
+BNV:[4,8]
