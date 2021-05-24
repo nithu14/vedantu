@@ -1,4 +1,4 @@
-init 12
+init 16
 reg 1 B V
 reg 2 A V
 reg 3 A V
@@ -11,4 +11,8 @@ reg 9 B NV
 reg 10 B V
 reg 11 A NV
 reg 12 B NV
+req 13 A E
+req 14 B D
+req 15 C V
+req 16 D NV
 fin
