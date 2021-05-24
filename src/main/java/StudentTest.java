@@ -1,31 +1,68 @@
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
+import java.util.Set;
 
-public class StudentTest {
+public class Studenttest {
+	
+	public static int checkno(String no) {
+		int size=0;
+		
+		try {
+			size=Integer.parseInt(no);
+		}catch(Exception E) {
+			System.out.println("Not a valid no :"+E);
+			return 0;
+		}
+		
+		if(size<=0) {
+			System.out.println("Please enter valid no");
+			return size;
+		}
+		
+		return size;
+		
+		
+		
+	}
 
+	@SuppressWarnings("resource")
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int size=0;
-		
 		Scanner sc = new Scanner(System.in);
 		ArrayList<String> al = new ArrayList<String>();
+		ArrayList<String> AV=new ArrayList<String>();
+		ArrayList<String> ANV=new ArrayList<String>();
+		ArrayList<String> BV=new ArrayList<String>();
+		ArrayList<String> BNV=new ArrayList<String>();
 		
-		HashMap<String, String> Veg = new HashMap<String,String>();
-		LinkedHashSet<String> VS = new LinkedHashSet<String>();
-		HashMap<String, String> NVeg = new HashMap<String,String>();
-		LinkedHashSet<String> NVS = new LinkedHashSet<String>();
-		String req = sc.next();
-		String[] cnt = req.split("_");
+		LinkedHashMap<String, String> Veg = new LinkedHashMap<String,String>();
+		LinkedHashMap<String, String> NVeg = new LinkedHashMap<String,String>();
 		
-		size=Integer.parseInt(cnt[1]);
+
 		
+		boolean flag=true;
+		while(flag) {
+			
+			String count = sc.nextLine();
+			String[] cnt = count.split("\\s");
+			size=checkno(cnt[1]);
+			
+			if(size>0) {
+				flag=false;
+			}
+		}
+		
+				
 		int j=0;
+		String req;
 		while(j<size) {
 		
-			req = sc.next();
+			req = sc.nextLine();
 			
 			if(req.contains("fin")) {
 				break;
@@ -37,39 +74,36 @@ public class StudentTest {
 				j++;
 			
 		}
-	//		req="reg 1 B V";
+		
 		String[] sp;
 		
 		for(int i=0;i<al.size();i++) {
 			if(al.get(i).contains("NV")) {
-				sp = al.get(i).split("_");
+				sp = al.get(i).split("\\s");
 				NVeg.put(sp[1], sp[2]);
-				NVS.add(sp[1]);
+	
 			}else {
-				sp = al.get(i).split("_");
+				sp = al.get(i).split("\\s");
 				Veg.put(sp[1], sp[2]);
-				VS.add(sp[1]);
+	
 			}
 		}
 				
-		ArrayList<String> AV=new ArrayList<String>();
-		ArrayList<String> ANV=new ArrayList<String>();
-		ArrayList<String> BV=new ArrayList<String>();
-		ArrayList<String> BNV=new ArrayList<String>();
 		
-		Iterator<String> it1 = VS.iterator();
+		
+		Set<String> Vkey = Veg.keySet();
+		Iterator<String> it1 = Vkey.iterator();
 		while(it1.hasNext()) {
 			String stu = it1.next();
-			if(Veg.get(stu).equalsIgnoreCase("A")) {
-				
+			if(Veg.get(stu).equalsIgnoreCase("A")) {	
 				AV.add(stu);
-				
 			}
 			else
 				BV.add(stu);
 			}
 		
-		Iterator<String> it2 = NVS.iterator();
+		Set<String> NKey = NVeg.keySet();
+		Iterator<String> it2 = NKey.iterator();
 		while(it2.hasNext()) {
 			String stu = it2.next();
 			if(NVeg.get(stu).equalsIgnoreCase("A")) {

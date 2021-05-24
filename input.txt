@@ -1,14 +1,14 @@
-init_12
-REG_1_A_V
-REG_2_B_V
-REG_3_A_NV
-REG_4_A_V
-REG_5_B_NV
-REG_6_B_NV
-REG_7_A_NV
-REG_8_B_V
-REG_9_A_V
-REG_10_A_NV
-REG_11_B_V
-REG_12_A_NV
+init 12
+reg 1 B V
+reg 2 A V
+reg 3 A V
+reg 4 B NV
+reg 5 B V
+reg 6 A NV
+reg 7 A V
+reg 8 A NV
+reg 9 B NV
+reg 10 B V
+reg 11 A NV
+reg 12 B NV
 fin
