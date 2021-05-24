@@ -88,9 +88,7 @@ public class Studenttest {
 	
 			}
 		}
-				
-		
-		
+					
 		Set<String> Vkey = Veg.keySet();
 		Iterator<String> it1 = Vkey.iterator();
 		while(it1.hasNext()) {
