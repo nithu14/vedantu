@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedList;
@@ -33,7 +34,7 @@ public class Studenttest {
 		int j=0;
 		String req;
 		ArrayList<String> al = new ArrayList<String>();
-		new ArrayList<String>();
+		HashSet<String> hs = new HashSet<String>();
 		String[] sp = null;
 		
 		while(j<size) {
@@ -41,9 +42,6 @@ public class Studenttest {
 			req = sc.nextLine();
 			
 			if(req.contains("fin")) {
-				break;
-			}else if(j==size) {
-				System.out.println("Size exceeded");
 				break;
 			}
 			
@@ -53,13 +51,14 @@ public class Studenttest {
 			if(split[1].length()>4) {
 				System.out.println("not a valid id, please enter again");
 			}
-			else if(al.contains(split[1])) {
+			else if(hs.contains(split[1])) {
 				System.out.println("duplicate Student, please enter again");
 			}
-			else
-				al.add(req);
-				
-			j++;
+			else {
+				hs.add(split[1]);
+				al.add(req);		
+				j++;
+			}
 			
 		}	
 		
